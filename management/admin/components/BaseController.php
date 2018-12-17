@@ -55,7 +55,7 @@ class BaseController extends CController {
     }
 
     // 基础列表方法
-    protected function _list($model = null, $criteria = null, $template = 'index', $data = array(), $pageSize = 15) {
+    protected function _list($model = null, $criteria = null, $template = 'index', $data = array(), $pageSize = 15,$other=null) {
         if ($model === null) {
             ajax_status(0, '没有数据或数据已禁用');
         }
@@ -64,7 +64,7 @@ class BaseController extends CController {
         $pages->pageSize = $pageSize;
         $pages->applylimit($criteria);
         $arclist = $model->findAll($criteria);
-        $data = array_merge($data, array('model' => $model, 'arclist' => $arclist, 'pages' => $pages, 'count'=>$count));  
+        $data = array_merge($data, array('model' => $model, 'arclist' => $arclist, 'pages' => $pages, 'count'=>$count,'other'=>$other));
         $this->render($template, $data);
     }
 

@@ -11,6 +11,7 @@ $st="";
             'award_index1' => array('商品信息管理', 'item/index'),
             'award_index2' => array('商品退货管理', 'salesreturn/index'),
             'award_index3' => array('商品订单管理', 'order/index'),
+            'award_index4' => array('商品订单审核', 'review/index'),
         ),
        ),
   );
